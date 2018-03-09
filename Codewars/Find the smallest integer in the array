@@ -1,0 +1,10 @@
+function smallestInteger ($arr) {
+    $smallest = $arr[0];
+    foreach($arr as $arr)
+    {
+      if($smallest > $arr)
+        $smallest = $arr;
+    }
+    
+    return $smallest;
+}
