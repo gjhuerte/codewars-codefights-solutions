@@ -1,0 +1,8 @@
+function camel_case(string $s): string {
+  $words = explode(" ", $s);
+  $words = array_map( function($callback){
+    return ucfirst($callback);
+  }, $words);
+  
+  return implode($words);
+}
