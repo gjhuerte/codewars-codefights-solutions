@@ -1,0 +1,31 @@
+function expanded_form(int $n): string {
+  $temp = $n;
+  $ctr = 0;
+  $text = "";
+  
+  for($ctr = 0; $temp >= 1 ; $ctr++)
+  {
+    $temp = $temp/10;
+  }
+  
+  $split_n = str_split($n);
+  krsort($split_n);
+  $split_n = array_values($split_n);
+  
+  do
+  {
+    
+    $zero = "";
+    
+    for($in_ctr = 0; $in_ctr < $ctr-1; $in_ctr++)
+    {
+      $zero = $zero . "0";
+    }
+    
+    if($split_n[$ctr-1])
+      $text = ( (isset( $split_n[$ctr-1]) && ($text)) ? $text . " + " : "" ) . $split_n[$ctr-1] . $zero;
+    --$ctr;  
+  } while( $ctr > 0 );
+  
+  return $text;
+}
