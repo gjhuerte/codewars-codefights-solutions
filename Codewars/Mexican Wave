@@ -1,0 +1,22 @@
+function wave($people){
+  
+  $arr = [];
+  
+  if(strlen($people) > 0)
+  {
+    $initial = str_split($people);
+    
+    foreach($initial as $key=>$value)
+    {
+      if( isset($value) && $value != " " )
+      {
+        $initial[$key] = strtoupper($value);
+        array_push($arr, implode( '', $initial));
+        $initial[$key] = strtolower($value);
+      }
+    }
+  }
+  
+  return $arr;
+
+}
