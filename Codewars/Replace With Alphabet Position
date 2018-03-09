@@ -1,0 +1,22 @@
+function alphabet_position(string $s): string {
+  $initial = explode(" ", $s);
+  
+  foreach($initial as $arr){
+    foreach(str_split($arr) as $arr){
+      $final[] = strtolower($arr);  
+    }
+  }
+   
+  $reference = array_combine(range('a', 'z'), range(1,26));
+  
+  $final = array_map(function($callback) use ($reference) {
+    if(isset($reference[$callback])) 
+      return $reference[$callback];
+  }, $final);
+  
+  $final = array_filter( $final , function($callback){
+    return isset($callback);
+  });
+  
+  return rtrim(ucfirst(implode($final, " ")));
+}
