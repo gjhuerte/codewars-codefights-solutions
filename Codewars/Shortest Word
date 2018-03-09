@@ -1,0 +1,16 @@
+function findShort($str){
+
+  $split_str = explode(  " " , $str );
+  $count = 0; 
+  
+  $array = array_map( "arr_length" , $split_str);
+  
+  $array = arsort($array);
+  
+  return $array;
+  
+}
+ 
+function arr_length($callback){
+  return strlen($callback);
+}
