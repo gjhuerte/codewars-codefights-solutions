@@ -1,0 +1,7 @@
+function factorial(int $n): int {
+  if($n < 0 || $n > 12){
+    throw new RangeException("Invalid Range");
+  }
+  
+  return array_product(range(1, ($n == 0) ? 1 : $n));
+}
