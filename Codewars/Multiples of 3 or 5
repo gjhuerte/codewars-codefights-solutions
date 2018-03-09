@@ -1,0 +1,14 @@
+function solution($number){
+  $sum = 0;
+  $three = 3;
+  $five = 5;
+  for($ctr = 1; $ctr < $number; $ctr++)
+  {
+    if( ($ctr % $three) == 0 || ($ctr % $five) == 0)
+    {
+        $sum += $ctr;
+    }  
+  }
+  
+  return $sum;
+}
