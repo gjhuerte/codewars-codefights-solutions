@@ -1,0 +1,4 @@
+function makeArrayConsecutive2($statues) {
+    sort($statues);
+    return  abs( count(range($statues[0], end($statues))) - count($statues));
+}
