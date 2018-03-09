@@ -1,0 +1,14 @@
+function isAlt($s){
+  $split = str_split($s);
+  $vowels = [
+    'a', 'e', 'i', 'o', 'u'
+  ];
+  
+  foreach($split as $key=>$letter)
+  {
+    if( isset($split[$key+1]) && (in_array( $letter, $vowels) && in_array( $split[$key+1], $vowels ) || !in_array( $letter, $vowels) && !in_array( $split[$key+1], $vowels ))  )
+      return false;
+  }
+  
+  return true;
+}
