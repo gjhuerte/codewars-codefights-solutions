@@ -1,0 +1,13 @@
+function adjacentElementsProduct($inputArray) {
+    $max_product = $inputArray[0] * $inputArray[1];
+    
+    for($ctr = 0 ; $ctr < count($inputArray) - 1 ; $ctr++ )
+    {
+        $product = $inputArray[$ctr] * $inputArray[$ctr + 1];
+        if($max_product < $product)
+            $max_product = $product;
+    }
+    
+    return $max_product;
+    
+}
