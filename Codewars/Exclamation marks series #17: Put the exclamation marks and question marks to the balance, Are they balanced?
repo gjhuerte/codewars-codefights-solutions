@@ -1,0 +1,34 @@
+function balance(string $l, string $r): string {
+  $left = str_split($l);
+  $right = str_split($r);
+  $l_count = 0;
+  $r_count = 0;
+  $characters = [
+    '!' => 2,
+    '?' => 3
+  ];
+  
+  foreach($left as $left)
+  {
+    $l_count += $characters[$left];
+  }
+  
+  foreach($right as $right)
+  {
+    $r_count += $characters[$right];
+  }
+  
+  if($l_count > $r_count)
+  {
+    return "Left"; 
+  }
+  
+  if($l_count < $r_count)
+  {
+    return "Right";
+  }
+  
+  return "Balance";
+  
+  
+}
